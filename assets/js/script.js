@@ -32,7 +32,7 @@ if (difficulty === "easy") {
     let num1 = Math.ceil(Math.random() * 5);
     let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random()*5);
-    easyEquation(num1);
+    easyEquation(num1, nOne);
 } else if (difficulty === "normal") {
     let num1 = Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
@@ -55,17 +55,18 @@ if (difficulty === "easy") {
 
 // Function to create equations for each difficulty
 
-function easyEquation(num1) {
-    document.getElementById("num1").textContent = num1;
+function easyEquation(num1, nOne) {
+    document.getElementById("num1").textContent = num1+"n";
+    document.getElementById("sum").textContent = num1 * nOne;
 }
 
 function normalEquation(num1, num2) {
-    document.getElementById("num1").textContent = num1;
+    document.getElementById("num1").textContent = num1+"n";
     document.getElementById("num2").textContent = num2;
 }
 
 function hardEquation(num1, num2) {
-    document.getElementById("num1").textContent = num1;
+    document.getElementById("num1").textContent = num1+"n";
     document.getElementById("num2").textContent = num2;
 }
 
