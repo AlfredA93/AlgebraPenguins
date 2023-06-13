@@ -1,5 +1,25 @@
 // Add JavaScript here
 
+//Wait for the DOM to load fully before the game can start running.
+//Add event listeners for which difficulty is chosen.
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) { 
+        button.addEventListener("click", function () {
+            if (this.getAttribute("id") === "submit") {
+                evaluateAnswer();
+            } else {
+                let difficulty = this.getAttribute("id");
+                startStop();
+            }
+        })
+    }
+});
+
+
 // Function for Start/Stop Timer Buttons which then trigger the function to run the game.
 
 // If statement for difficulty selector
