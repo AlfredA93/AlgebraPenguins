@@ -21,6 +21,20 @@ if (difficulty === "easy") {
 
 // Function to create equations for each difficulty
 
+function easyEquation(num1) {
+    document.getElementById("num1").textContent = num1;
+}
+
+function normalEquation(num1, num2) {
+    document.getElementById("num1").textContent = num1;
+    document.getElementById("num2").textContent = num2;
+}
+
+function hardEquation(num1, num2) {
+    document.getElementById("num1").textContent = num1;
+    document.getElementById("num2").textContent = num2;
+}
+
 // Function to calculate the value of 'n'
 
 // Function to check the user answer
