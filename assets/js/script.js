@@ -23,15 +23,19 @@ document.addEventListener("DOMContentLoaded", function() {
 function stageOne(difficulty){
 if (difficulty === "easy") {
     let num1 = Math.ceil(Math.random() * 5);
-    easyEquation(num1);
+    let nOne = getElementById("n-1").Math.ceil(Math.random() * 5);
+    easyEquation(num1, n);
 } else if (difficulty === "normal") {
-    let num1 = Math.ceil(Math.random() * 10);
+    let num1 = Math.ceil(Math.random() * 12);
+    let nOne = getElementById("n-1").Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
-    normalEquation(num1, num2);
+    normalEquation(num1, nOne, num2);
 } else if (difficulty === "hard") {
     let num1 = Math.ceil(Math.random() * 20);
+    let nOne = getElementById("n-1").Math.ceil(Math.random() * 15);
     let num2 = Math.ceil(Math.random()*4);
-    hardEquation(num1, num2);
+    let nTwo = getElementById("n-2").Math.ceil(Math.random() * 9);
+    hardEquation(num1, nOne, num2, nTwo);
 } else {
     alert(`Please select difficulty.`);
     throw `Please select difficulty. Aborting.`;
