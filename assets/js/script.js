@@ -81,14 +81,21 @@ function normalEquation(num1, nOne, num2) {
 }
 
 };
-/*
-function hardEquation(num1, num2) {
+
+function hardEquation(num1, num2, nOne, nTwo) {
+    let operatorArray = ['+', '-'];
+    let operator = Math.floor(Math.random() * operatorArray.length);
+
     document.getElementById("num1").textContent = num1+"n";
-    document.getElementById("operator1").textContent = 
-    document.getElementById("num2").textContent = 
-    document.getElementById("operator2").textContent = 
+    document.getElementById("operator1").textContent = operatorArray[operator];
+    document.getElementById("num2").textContent = num2;
+    document.getElementById("operator2").textContent = "^";
+    document.getElementById("n-2").textContent = "n"
     document.getElementById("operator3").textContent = "=";
-    document.getElementById("sum").textContent = 
+    if(operatorArray[operator] === "+") { 
+        document.getElementById("sum").textContent = num1 * nOne + num2 ^ nTwo;
+    } else {document.getElementById("sum").textContent = (num1 * nOne) - (num2 ^ nTwo); 
+}
 }
 
 // Function to calculate the value of 'n'
@@ -96,4 +103,3 @@ function hardEquation(num1, num2) {
 // Function to check the user answer
 
 // Function to check current score and add 1 if the user answer is correct 
-*/
