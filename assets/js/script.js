@@ -19,23 +19,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// If statement for difficulty selector
+/** If statement for difficulty selector.
+ * These change between 3 difficulties.
+ * Examples are as follows:
+ * Easy -> 3n = 15
+ * Normal -> 4n + 4 = 8
+ * Hard -> 14n - 4^n = 10
+*/ 
+
 function stageOne(difficulty){
 if (difficulty === "easy") {
     let num1 = Math.ceil(Math.random() * 5);
-    let nOne = getElementById("n-1").Math.ceil(Math.random() * 5);
-    easyEquation(num1, n);
+    let nOne = document.getElementById("n-1");
+    nOne = Math.ceil(Math.random()*5);
+    easyEquation(num1);
 } else if (difficulty === "normal") {
     let num1 = Math.ceil(Math.random() * 12);
-    let nOne = getElementById("n-1").Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
-    normalEquation(num1, nOne, num2);
+    let nOne = document.getElementById("n-1");
+    nOne = Math.ceil(Math.random()*12);
+    normalEquation(num1, num2);
 } else if (difficulty === "hard") {
     let num1 = Math.ceil(Math.random() * 20);
-    let nOne = getElementById("n-1").Math.ceil(Math.random() * 15);
     let num2 = Math.ceil(Math.random()*4);
-    let nTwo = getElementById("n-2").Math.ceil(Math.random() * 9);
-    hardEquation(num1, nOne, num2, nTwo);
+    let nOne = document.getElementById("n-1");
+    nOne = Math.ceil(Math.random()*10);
+    let nTwo = document.getElementById("n-2");
+    nTwo = Math.ceil(Math.random()*3);
+    hardEquation(num1, num2);
 } else {
     alert(`Please select difficulty.`);
     throw `Please select difficulty. Aborting.`;
