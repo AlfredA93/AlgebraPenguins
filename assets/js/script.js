@@ -36,17 +36,15 @@ if (difficulty === "easy") {
 } else if (difficulty === "normal") {
     let num1 = Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
-    let nOne = document.getElementById("n-1");
+    let nOne = document.getElementsByClassName("n-1");
     nOne = Math.ceil(Math.random()*12);
     normalEquation(num1, num2, nOne);
 } else if (difficulty === "hard") {
     let num1 = Math.ceil(Math.random() * 20);
-    let num2 = Math.ceil(Math.random()*4);
-    let nOne = document.getElementById("n-1");
-    nOne = Math.ceil(Math.random()*10);
-    let nTwo = document.getElementById("n-2");
-    nTwo = Math.ceil(Math.random()*3);
-    hardEquation(num1, num2, nOne, nTwo);
+    let num2 = Math.ceil(Math.random()*5);
+    let nOne = document.getElementsByClassName("n-1");
+    nOne = Math.ceil(Math.random()*3);
+    hardEquation(num1, num2, nOne);
 } else {
     alert(`Please select difficulty.`);
     throw `Please select difficulty. Aborting.`;
@@ -82,7 +80,7 @@ function normalEquation(num1, nOne, num2) {
 
 };
 
-function hardEquation(num1, num2, nOne, nTwo) {
+function hardEquation(num1, num2, nOne) {
     let operatorArray = ['+', '-'];
     let operator = Math.floor(Math.random() * operatorArray.length);
 
@@ -93,8 +91,8 @@ function hardEquation(num1, num2, nOne, nTwo) {
     document.getElementById("n-2").textContent = "n"
     document.getElementById("operator3").textContent = "=";
     if(operatorArray[operator] === "+") { 
-        document.getElementById("sum").textContent = num1 * nOne + num2 ^ nTwo;
-    } else {document.getElementById("sum").textContent = (num1 * nOne) - (num2 ^ nTwo); 
+        document.getElementById("sum").textContent = num1 * nOne + num2 ^ nOne;
+    } else {document.getElementById("sum").textContent = (num1 * nOne) - (num2 ^ nOne); 
 }
 }
 
