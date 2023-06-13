@@ -13,17 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 evaluateAnswer();
             } else {
                 let difficulty = this.getAttribute("id");
-                difficulty();
+                stageOne(difficulty);
             }
         })
     }
 });
 
-
-// Function for Start/Stop Timer Buttons which then trigger the function to run the game.
-
 // If statement for difficulty selector
-function difficulty(){
+function stageOne(difficulty){
 if (difficulty === "easy") {
     let num1 = Math.ceil(Math.random() * 5);
     easyEquation(num1);
