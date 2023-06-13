@@ -101,3 +101,11 @@ function hardEquation(num1, num2, nOne) {
 // Function to check the user answer
 
 // Function to check current score and add 1 if the user answer is correct 
+
+/**Notes for the morning -
+ * 
+ * Look into level hard n equation fixes.
+ * Make sure all data is cleared when switching between difficulties
+ * Make sure n is equal across all html id's and classes.
+ * 
+ *  */ 
