@@ -38,7 +38,7 @@ if (difficulty === "easy") {
     let num2 = Math.ceil(Math.random() * 10);
     let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random()*12);
-    normalEquation(num1, num2);
+    normalEquation(num1, num2, nOne);
 } else if (difficulty === "hard") {
     let num1 = Math.ceil(Math.random() * 20);
     let num2 = Math.ceil(Math.random()*4);
@@ -46,7 +46,7 @@ if (difficulty === "easy") {
     nOne = Math.ceil(Math.random()*10);
     let nTwo = document.getElementById("n-2");
     nTwo = Math.ceil(Math.random()*3);
-    hardEquation(num1, num2);
+    hardEquation(num1, num2, nOne, nTwo);
 } else {
     alert(`Please select difficulty.`);
     throw `Please select difficulty. Aborting.`;
@@ -57,21 +57,43 @@ if (difficulty === "easy") {
 
 function easyEquation(num1, nOne) {
     document.getElementById("num1").textContent = num1+"n";
+    document.getElementById("operator1").textContent = ""
+    document.getElementById("num2").textContent = "";
+    document.getElementById("operator2").textContent = ""
+    document.getElementById("operator3").textContent = "=";
     document.getElementById("sum").textContent = num1 * nOne;
+
 }
 
-function normalEquation(num1, num2) {
+function normalEquation(num1, nOne, num2) {
+    let operatorArray = ['+', '-'];
+    let operator = Math.floor(Math.random() * operatorArray.length);
+
+
     document.getElementById("num1").textContent = num1+"n";
+    document.getElementById("operator1").textContent = operatorArray[operator];
     document.getElementById("num2").textContent = num2;
+    document.getElementById("operator2").textContent = ""
+    document.getElementById("operator3").textContent = "=";
+    if(operatorArray[operator] === "+") { 
+        document.getElementById("sum").textContent = num1 * nOne + num2;
+    } else {document.getElementById("sum").textContent = num1 * nOne - num2; 
 }
 
+};
+/*
 function hardEquation(num1, num2) {
     document.getElementById("num1").textContent = num1+"n";
-    document.getElementById("num2").textContent = num2;
+    document.getElementById("operator1").textContent = 
+    document.getElementById("num2").textContent = 
+    document.getElementById("operator2").textContent = 
+    document.getElementById("operator3").textContent = "=";
+    document.getElementById("sum").textContent = 
 }
 
 // Function to calculate the value of 'n'
 
 // Function to check the user answer
 
-// Function to check current score and add 1 if the user answer is correct
+// Function to check current score and add 1 if the user answer is correct 
+*/
