@@ -125,16 +125,16 @@ function evaluateAnswer() {
 }
 
 function calculateAnswer() {
-    let num1 = parseInt(document.getElementById("num1").value);
+    let num1 = parseInt(document.getElementById("num1").textContent);
     let operator1 = document.getElementById("operator1").textContent;
-    let num2 = parseInt(document.getElementById("num2").value);
-    let sum = parseInt(document.getElementById("sum").value);
+    let num2 = parseInt(document.getElementById("num2").textContent);
+    let sum = parseInt(document.getElementById("sum").textContent);
         if (operator1 === "+") {
            return [(sum - num2) / num1, "normal"]
         } else if (operator1 === "-") {
            return [(sum + num2) / num1, "normal"]
         } else {
-            return [num1 / sum, "easy"]
+            return [sum / num1, "easy"]
         }
     }
 
