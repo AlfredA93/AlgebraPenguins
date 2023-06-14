@@ -88,7 +88,7 @@ function hardEquation(num1, num2, nOne) {
     document.getElementById("operator1").textContent = operatorArray[operator];
     document.getElementById("num2").textContent = num2;
     document.getElementById("operator2").textContent = "^";
-    document.getElementById("n-2").textContent = "n"
+    document.getElementById("n-2").textContent = "n";
     document.getElementById("operator3").textContent = "=";
     if(operatorArray[operator] === "+") { 
         document.getElementById("sum").textContent = num1 * nOne + num2 ^ nOne;
