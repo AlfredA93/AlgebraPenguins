@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+});
 
 /** If statement for difficulty selector.
  * These change between 3 difficulties.
