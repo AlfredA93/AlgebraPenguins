@@ -106,6 +106,11 @@ function hardEquation(num1, num2, nOne) {
 
 // Function to calculate the value of 'n'
 
+
+function evaluateAnswer() {
+    let userGuess = document.getElementById("user-number").value;
+}
+
 function calculateAnswer() {
     let num1 = document.getElementById("num1").value;
     let operator1 = document.getElementById("operator1").textContent;
