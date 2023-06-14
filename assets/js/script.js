@@ -11,13 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function () {
             if (this.getAttribute("id") === "submit") {
                 evaluateAnswer();
-            } else {
+            } else if (this.getAttribute("id") === "start-button") {
+                startTimer();
+                } else {
                 let difficulty = this.getAttribute("id");
-                stageOne(difficulty);
-            }
+                stageOne(difficulty);}
         })
     }
 });
+
+function startTimer() {
+
+}
+
 
 /** If statement for difficulty selector.
  * These change between 3 difficulties.
