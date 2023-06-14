@@ -39,13 +39,16 @@ if (difficulty === "easy") {
     let nOne = document.getElementsByClassName("n-1");
     nOne = Math.ceil(Math.random()*12);
     normalEquation(num1, num2, nOne);
-} else if (difficulty === "hard") {
+} /* 
+    Temporarily Comment Out Hard Equation 
+
+    else if (difficulty === "hard") {
     let num1 = Math.ceil(Math.random() * 20);
     let num2 = Math.ceil(Math.random()*5);
     let nOne = document.getElementsByClassName("n-1");
     nOne = Math.ceil(Math.random()*3);
     hardEquation(num1, num2, nOne);
-} else {
+} */ else {
     alert(`Please select difficulty.`);
     throw `Please select difficulty. Aborting.`;
 }
@@ -81,6 +84,8 @@ function normalEquation(num1, nOne, num2) {
 }
 
 };
+/* Temporarily Comment Out Hard Equation 
+
 
 function hardEquation(num1, num2, nOne) {
     let operatorArray = ['+', '-'];
@@ -92,22 +97,15 @@ function hardEquation(num1, num2, nOne) {
     document.getElementById("operator2").textContent = "^";
     document.getElementById("n-2").textContent = "n";
     document.getElementById("operator3").textContent = "=";
-    if(operatorArray[operator] === "+") { 
+   if(operatorArray[operator] === "+") { 
         document.getElementById("sum").textContent = num1 * nOne + num2 ^ nOne;
     } else {document.getElementById("sum").textContent = (num1 * nOne) - (num2 ^ nOne); 
+} 
 }
-}
+*/
 
 // Function to calculate the value of 'n'
 
 // Function to check the user answer
 
-// Function to check current score and add 1 if the user answer is correct 
-
-/**Notes for the morning -
- * 
- * Look into level hard n equation fixes.
- * Make sure all data is cleared when switching between difficulties
- * Make sure n is equal across all html id's and classes.
- * 
- *  */ 
+// Function to check current score and add 1 if the user answer is correct  
