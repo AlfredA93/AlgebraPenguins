@@ -108,19 +108,23 @@ function hardEquation(num1, num2, nOne) {
 
 
 function evaluateAnswer() {
-    let userGuess = document.getElementById("user-number").value;
+    let userGuess = parseInt(document.getElementById("user-number").value);
+    let correct = calculateAnswer();
+
 }
 
 function calculateAnswer() {
-    let num1 = document.getElementById("num1").value;
+    let num1 = parseInt(document.getElementById("num1").value);
     let operator1 = document.getElementById("operator1").textContent;
-    let num2 = document.getElementById("num2").value;
-    let sum = document.getElementById("sum").value;
+    let num2 = parseInt(document.getElementById("num2").value);
+    let sum = parseInt(document.getElementById("sum").value);
         if (operator1 === "+") {
-            (sum - num2) / num1
+           return [(sum - num2) / num1, "normal"]
         } else if (operator1 === "-") {
-            (sum + num2) / num1
-        } else {num1 / sum}
+           return [(sum + num2) / num1, "normal"]
+        } else {
+            return [num1 / sum, "easy"]
+        }
     }
 
 
