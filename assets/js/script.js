@@ -17,7 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
-});
+    let difficultyButtons = document.getElementById("easy");
+    function changeColor(){
+        if (this.style.borderColor === "red") {
+            this.style.borderColor = "white";
+        } else {this.style.borderColor = "red"}
+    };
+
+        difficultyButtons.addEventListener("click", changeColor());
+    });
+
+
 
 /** If statement for difficulty selector.
  * These change between 3 difficulties.
@@ -114,14 +124,13 @@ function evaluateAnswer() {
 
     if (userCorrect) {
         document.getElementById("answer-indicator").textContent = `
-        "Well Done! (insert tick icon here)"`;
+        Well Done! (insert tick icon here)`;
         addScore();
+        stageOne(difficulty = calculateAnswer[1]);
     } else { document.getElementById("answer-indicator").textContent = `
-    "(insert cross icon here). Oh no, it was ${correct[0]} "`;
+    (insert cross icon here). Oh no, it was ${correct[0]}`;
+    stageOne(difficulty = calculateAnswer[1]);
     }
-
-    stageOne(calculateAnswer[1]);
-
 }
 
 function calculateAnswer() {
