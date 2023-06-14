@@ -22,19 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function startTimer() {
-    let timer = 60;
-    setInterval(function(){
-        timer -- if (timer === 0) {
-            endGame();
-        }
-    })
+function startTimer()  {
+    let counter = 60; 
+    let interval = setInterval(() => {
+      document.getElementById("clock").innerHTML = `${counter}s`;
+      counter--;
+        
+      if (counter < 0 ) {
+        clearInterval(interval);
+        endGame();
+      }
+    }, 1000);
 }
 
 function resetTimer() {
-
+    
 }
-
 
 /** If statement for difficulty selector.
  * These change between 3 difficulties.
