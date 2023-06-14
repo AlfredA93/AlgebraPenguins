@@ -116,6 +116,7 @@ function evaluateAnswer() {
         document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
         stageOne(difficulty = calculateAnswer()[1]);
+        addScore();
     } else { document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
     stageOne(difficulty = calculateAnswer()[1]);
@@ -137,7 +138,11 @@ function calculateAnswer() {
     }
 
 
+function addScore() {
+    let currentScore = document.getElementById("current-score").textContent;
+    document.getElementById("current-score").textContent = currentScore + 1;
 
+}
 
 // Function to check the user answer
 
