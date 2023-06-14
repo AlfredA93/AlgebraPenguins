@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 evaluateAnswer();
             } else if (this.getAttribute("id") === "start-button") {
                 startTimer();
-                } else {
+                } else if (this.getAttribute("id") === "reset-button") {
+                    resetTimer();
+                    } else {
                 let difficulty = this.getAttribute("id");
                 stageOne(difficulty);}
         })
@@ -21,6 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function startTimer() {
+    let timer = 60;
+    setInterval(function(){
+        timer -- if (timer === 0) {
+            endGame();
+        }
+    })
+}
+
+function resetTimer() {
 
 }
 
