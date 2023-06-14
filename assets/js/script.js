@@ -110,6 +110,17 @@ function hardEquation(num1, num2, nOne) {
 function evaluateAnswer() {
     let userGuess = parseInt(document.getElementById("user-number").value);
     let correct = calculateAnswer();
+    let userCorrect = userGuess === correct[0];
+
+    if (userCorrect) {
+        document.getElementById("answer-indicator").textContent = `
+        "Well Done! (insert tick icon here)"`;
+        addScore();
+    } else { document.getElementById("answer-indicator").textContent = `
+    "(insert cross icon here). Oh no, it was ${correct[0]} "`;
+    }
+
+    stageOne(calculateAnswer[1]);
 
 }
 
