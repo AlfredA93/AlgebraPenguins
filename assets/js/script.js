@@ -17,17 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
-    let difficultyButtons = document.getElementById("easy");
-    function changeColor(){
-        if (this.style.borderColor === "red") {
-            this.style.borderColor = "white";
-        } else {this.style.borderColor = "red"}
-    };
-
-        difficultyButtons.addEventListener("click", changeColor());
-    });
-
-
 
 /** If statement for difficulty selector.
  * These change between 3 difficulties.
