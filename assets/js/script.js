@@ -106,6 +106,19 @@ function hardEquation(num1, num2, nOne) {
 
 // Function to calculate the value of 'n'
 
+function evaluateAnswer() {
+    let num1 = document.getElementById("num1").value;
+    let operator1 = document.getElementById("operator1").textContent;
+    let num2 = document.getElementById("num2").value;
+    let sum = document.getElementById("sum").value;
+        if (operator1 === "+") {
+            (sum - num2) / num1
+        } else if (operator1 === "-") {
+            (sum + num2) / num1
+        } else {num1 / sum}
+    }
+
+
 // Function to check the user answer
 
 // Function to check current score and add 1 if the user answer is correct  
