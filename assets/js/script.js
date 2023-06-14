@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startTimer()  {
     let counter = 60; 
-    let interval = setInterval(() => {
+    var interval = setInterval(() => {
       document.getElementById("clock").innerHTML = `${counter}s`;
       counter--;
         
@@ -36,7 +36,7 @@ function startTimer()  {
 }
 
 function resetTimer() {
-    
+    clearInterval(interval)
 }
 
 /** If statement for difficulty selector.
