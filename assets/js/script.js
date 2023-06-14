@@ -115,11 +115,10 @@ function evaluateAnswer() {
     if (userCorrect) {
         document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
-        addScore();
-        stageOne(difficulty = calculateAnswer[1]);
+        stageOne(difficulty = calculateAnswer()[1]);
     } else { document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
-    stageOne(difficulty = calculateAnswer[1]);
+    stageOne(difficulty = calculateAnswer()[1]);
     }
 }
 
