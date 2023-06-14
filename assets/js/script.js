@@ -55,9 +55,10 @@ if (difficulty === "easy") {
 
 function easyEquation(num1, nOne) {
     document.getElementById("num1").textContent = num1+"n";
-    document.getElementById("operator1").textContent = ""
+    document.getElementById("operator1").textContent = "";
     document.getElementById("num2").textContent = "";
-    document.getElementById("operator2").textContent = ""
+    document.getElementById("operator2").textContent = "";
+    document.getElementById("n-2").textContent = "";
     document.getElementById("operator3").textContent = "=";
     document.getElementById("sum").textContent = num1 * nOne;
 
@@ -71,7 +72,8 @@ function normalEquation(num1, nOne, num2) {
     document.getElementById("num1").textContent = num1+"n";
     document.getElementById("operator1").textContent = operatorArray[operator];
     document.getElementById("num2").textContent = num2;
-    document.getElementById("operator2").textContent = ""
+    document.getElementById("operator2").textContent = "";
+    document.getElementById("n-2").textContent = "";
     document.getElementById("operator3").textContent = "=";
     if(operatorArray[operator] === "+") { 
         document.getElementById("sum").textContent = num1 * nOne + num2;
