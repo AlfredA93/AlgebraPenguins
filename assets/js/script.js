@@ -15,8 +15,8 @@ const score = document.getElementById("current-score");
 startButton.addEventListener("click", startTimer);
 resetButton.addEventListener("click", resetTimer);
 submitButton.addEventListener("click", evaluateAnswer);
-easyButton.addEventListener("click", stageOne);
-normalButton.addEventListener("click", stageOne);
+easyButton.addEventListener("click", easyDifficulty);
+normalButton.addEventListener("click", normalDifficulty);
 
 /*
 document.addEventListener("DOMContentLoaded", function() {
@@ -72,13 +72,14 @@ function resetTimer() {
  * Hard -> 14n - 4^n = 10
 */ 
 
-function stageOne(difficulty){
-if (difficulty === "easy") {
+function easyDifficulty(){
     let num1 = Math.ceil(Math.random() * 5);
     let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random()*5);
     easyEquation(num1, nOne);
-} else if (difficulty === "normal") {
+}
+
+function normalDifficulty(){
     let num1 = Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
     let nOne = document.getElementsByClassName("n-1");
@@ -93,11 +94,8 @@ if (difficulty === "easy") {
     let nOne = document.getElementsByClassName("n-1");
     nOne = Math.ceil(Math.random()*3);
     hardEquation(num1, num2, nOne);
-} */ else {
-    alert(`Please select difficulty.`);
-    throw `Please select difficulty. Aborting.`;
 }
-}
+*/
 
 // Function to create equations for each difficulty
 
