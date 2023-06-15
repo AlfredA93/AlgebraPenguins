@@ -36,5 +36,11 @@ header {
 }
 
 .equation-pieces {
-    padding: 1px;
+    padding: 1.5px;
+}
+
+.equation-border {
+    border:2px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
