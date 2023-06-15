@@ -45,8 +45,10 @@ function timer() {
   }
 
 function startTimer()  {
+    startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
     document.getElementById("current-score").textContent = "0";
+
 }
 
 function resetTimer() {
