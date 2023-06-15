@@ -11,7 +11,7 @@ header {
     text-align: center;
 }
 
-#run-container {
+#run-container, #level-container {
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -22,6 +22,7 @@ header {
     width: 75px;
     text-align: center;
 }
-.run {
+.run, .difficulty{
     width: 75px;
+    text-align: center;
 }
