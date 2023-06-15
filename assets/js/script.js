@@ -166,10 +166,8 @@ function addScore() {
     document.getElementById("current-score").textContent = currentScore + 1;
 } else { document.getElementById("current-score").textContent = currentScore +2;
 }
-
-
 }
 
-// Function to check the user answer
-
-// Function to check current score and add 1 if the user answer is correct  
+function endGame() {
+    
+};
