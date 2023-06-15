@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-let counter = 5; 
+let counter = 60; 
 let interval;
 
 function timer() {
@@ -54,8 +54,9 @@ function startTimer()  {
 function resetTimer() {
     clearInterval(interval);
     counter = 60;
-    clock.innerHTML = `${counter}s`;
-
+    clock.innerHTML = ``;
+    startButton.removeAttribute("disabled");
+    document.getElementById("current-score").textContent = "0";
 }
 
 /** If statement for difficulty selector.
