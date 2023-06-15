@@ -169,7 +169,7 @@ function evaluateAnswer() {
         document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
         reDirect();
-        addScore();
+        addScore(calculateAnswer[1]);
     } else { document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
     reDirect();
@@ -194,8 +194,8 @@ function calculateAnswer() {
 function addScore() {
     let currentScore = parseInt(score.textContent);
     if (calculateAnswer[1] === "easy") {
-    score = currentScore + 1;
-} else { score = currentScore +2;
+    score.textContent = currentScore + 1;
+} else {score.textContent = currentScore +2;
 }
 }
 
