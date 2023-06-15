@@ -6,3 +6,18 @@ img {
 body {
     padding: 0 25% 0 25%;
 }
+
+#run-container {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5% 0 2.5% 0;
+}
+
+#clock {
+    width: 75px;
+    text-align: center;
+}
+.run {
+    width: 75px;
+}
