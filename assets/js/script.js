@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function normalDifficulty() {
     let num1 = Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
-    let nOne = document.getElementsByClassName("n-1");
+    let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random() * 12);
     normalEquation(num1, num2, nOne);
     focalPoint();
