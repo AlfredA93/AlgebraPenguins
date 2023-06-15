@@ -18,25 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
 
-  /*
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) { 
-        button.addEventListener("click", function () {
-            if (this.getAttribute("id") === "submit") {
-                evaluateAnswer();
-            } else if (this.getAttribute("id") === "start-button") {
-                startTimer();
-                } else if (this.getAttribute("id") === "reset-button") {
-                    resetTimer();
-                    } else {
-                let difficulty = this.getAttribute("id");
-                stageOne(difficulty);}
-        })
-    }
-});
-*/
   let score = document.getElementById("current-score");
   let counter = 60;
   let interval;
@@ -92,17 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     nOne = Math.ceil(Math.random() * 12);
     normalEquation(num1, num2, nOne);
     focalPoint();
-  } /* 
-    Temporarily Comment Out Hard Equation 
-
-    else if (difficulty === "hard") {
-    let num1 = Math.ceil(Math.random() * 20);
-    let num2 = Math.ceil(Math.random()*5);
-    let nOne = document.getElementsByClassName("n-1");
-    nOne = Math.ceil(Math.random()*3);
-    hardEquation(num1, num2, nOne);
-}
-*/
+  }
 
   // Function to create equations for each difficulty
 
@@ -128,25 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("sum").textContent = num1 * nOne - num2;
     }
   }
-  /* Temporarily Comment Out Hard Equation 
-
-
-function hardEquation(num1, num2, nOne) {
-    let operatorArray = ['+', '-'];
-    let operator = Math.floor(Math.random() * operatorArray.length);
-
-    document.getElementById("num1").textContent = num1+"n";
-    document.getElementById("operator1").textContent = operatorArray[operator];
-    document.getElementById("num2").textContent = num2;
-    document.getElementById("operator2").textContent = "^";
-    document.getElementById("n-2").textContent = "n";
-    document.getElementById("operator3").textContent = "=";
-   if(operatorArray[operator] === "+") { 
-        document.getElementById("sum").textContent = num1 * nOne + num2 ^ nOne;
-    } else {document.getElementById("sum").textContent = (num1 * nOne) - (num2 ^ nOne); 
-} 
-}
-*/
 
   // Function to calculate the value of 'n'
 
