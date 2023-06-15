@@ -52,7 +52,10 @@ function startTimer()  {
 }
 
 function resetTimer() {
-    clearInterval(interval)
+    clearInterval(interval);
+    counter = 60;
+    clock.innerHTML = `${counter}s`;
+
 }
 
 /** If statement for difficulty selector.
