@@ -12,8 +12,8 @@ const normalButton = document.getElementById("normal");
 const clock = document.getElementById("clock");
 const score = document.getElementById("current-score");
 
-
-
+startButton.addEventListener("click", startTimer);
+/*
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 });
-
+*/
 let counter = 60; 
 let interval;
 
