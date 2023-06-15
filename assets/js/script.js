@@ -193,7 +193,7 @@ function calculateAnswer() {
 
 function addScore() {
     let currentScore = parseInt(score.textContent);
-    if (calculateAnswer[1] === "easy") {
+    if (calculateAnswer()[1] === "easy") {
     score.textContent = currentScore + 1;
 } else {score.textContent = currentScore +2;
 }
