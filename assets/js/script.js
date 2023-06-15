@@ -150,6 +150,16 @@ function hardEquation(num1, num2, nOne) {
 // Function to calculate the value of 'n'
 
 
+
+function reDirect() {
+    if (calculateAnswer[1] === "easy") {
+        easyDifficulty();
+    } else {
+        normalDifficulty();
+    }
+}
+
+
 function evaluateAnswer() {
     let userGuess = parseInt(document.getElementById("user-number").value);
     let correct = calculateAnswer();
@@ -158,11 +168,13 @@ function evaluateAnswer() {
     if (userCorrect) {
         document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
-        stageOne(difficulty = calculateAnswer()[1]);
+        /*stageOne(difficulty = calculateAnswer()[1]);*/
+        reDirect();
         addScore();
     } else { document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
-    stageOne(difficulty = calculateAnswer()[1]);
+    /*stageOne(difficulty = calculateAnswer()[1]);*/
+    reDirect();
     }
 }
 
