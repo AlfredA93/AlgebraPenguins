@@ -152,7 +152,7 @@ function hardEquation(num1, num2, nOne) {
 
 
 function reDirect() {
-    if (calculateAnswer[1] === "easy") {
+    if (calculateAnswer()[1] === "easy") {
         easyDifficulty();
     } else {
         normalDifficulty();
