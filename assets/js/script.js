@@ -156,6 +156,9 @@ function hardEquation(num1, num2, nOne) {
     } else {
       normalDifficulty();
     }
+    setTimeout(function(){
+        document.getElementById("answer-indicator").textContent = "";
+    }, 2000);
   }
 
   function evaluateAnswer() {
