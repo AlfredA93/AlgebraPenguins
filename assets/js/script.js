@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 // Add JavaScript here
 
 //Wait for the DOM to load fully before the game can start running.
@@ -159,7 +160,6 @@ function reDirect() {
     }
 }
 
-
 function evaluateAnswer() {
     let userGuess = parseInt(document.getElementById("user-number").value);
     let correct = calculateAnswer();
@@ -202,3 +202,4 @@ function addScore() {
 function endGame() {
     
 };
+});
