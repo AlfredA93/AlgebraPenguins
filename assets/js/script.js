@@ -34,6 +34,7 @@ function startTimer()  {
         endGame();
       }
     }, 1000);
+    document.getElementById("current-score").textContent = "0";
 }
 
 function resetTimer() {
@@ -160,8 +161,12 @@ function calculateAnswer() {
 
 
 function addScore() {
-    let currentScore = document.getElementById("current-score").textContent;
+    let currentScore = parseInt(document.getElementById("current-score").textContent);
+    if (calculateAnswer()[1] === "easy") {
     document.getElementById("current-score").textContent = currentScore + 1;
+} else { document.getElementById("current-score").textContent = currentScore +2;
+}
+
 
 }
 
