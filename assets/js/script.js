@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startTimer()  {
     let counter = 60; 
-    var interval = setInterval(() => {
-      document.getElementById("clock").innerHTML = `${counter}s`;
+    let clock = document.getElementById("clock")
+    let interval = setInterval(() => {
+      clock.innerHTML = `${counter}s`;
       counter--;
         
       if (counter < 0 ) {
