@@ -1,24 +1,24 @@
-document.addEventListener("DOMContentLoaded", function() {
-// Add JavaScript here
+document.addEventListener("DOMContentLoaded", function () {
+  // Add JavaScript here
 
-//Wait for the DOM to load fully before the game can start running.
-//Add event listeners for which difficulty is chosen.
+  //Wait for the DOM to load fully before the game can start running.
+  //Add event listeners for which difficulty is chosen.
 
-const startButton = document.getElementById("start-button");
-const resetButton = document.getElementById("reset-button");
-const submitButton = document.getElementById("submit");
-const easyButton = document.getElementById("easy");
-const normalButton = document.getElementById("normal");
+  const startButton = document.getElementById("start-button");
+  const resetButton = document.getElementById("reset-button");
+  const submitButton = document.getElementById("submit");
+  const easyButton = document.getElementById("easy");
+  const normalButton = document.getElementById("normal");
 
-const clock = document.getElementById("clock");
+  const clock = document.getElementById("clock");
 
-startButton.addEventListener("click", startTimer);
-resetButton.addEventListener("click", resetTimer);
-submitButton.addEventListener("click", evaluateAnswer);
-easyButton.addEventListener("click", easyDifficulty);
-normalButton.addEventListener("click", normalDifficulty);
+  startButton.addEventListener("click", startTimer);
+  resetButton.addEventListener("click", resetTimer);
+  submitButton.addEventListener("click", evaluateAnswer);
+  easyButton.addEventListener("click", easyDifficulty);
+  normalButton.addEventListener("click", normalDifficulty);
 
-/*
+  /*
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -37,63 +37,62 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 */
-let score = document.getElementById("current-score");
-let counter = 60; 
-let interval;
+  let score = document.getElementById("current-score");
+  let counter = 60;
+  let interval;
 
-function focalPoint() {
+  function focalPoint() {
     document.getElementById("user-number").focus();
     document.getElementById("user-number").value = "";
-}
+  }
 
-function timer() {
+  function timer() {
     clock.innerHTML = `${counter}s`;
     counter--;
-    if (counter < 0 ) {
+    if (counter < 0) {
       clearInterval(interval);
       endGame();
     }
   }
 
-function startTimer()  {
+  function startTimer() {
     startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
     score.textContent = "0";
+  }
 
-}
-
-function resetTimer() {
+  function resetTimer() {
     clearInterval(interval);
     counter = 60;
     clock.innerHTML = ``;
     startButton.removeAttribute("disabled");
     score.textContent = "0";
-}
+  }
 
-/** If statement for difficulty selector.
- * These change between 3 difficulties.
- * Examples are as follows:
- * Easy -> 3n = 15
- * Normal -> 4n + 4 = 8
- * Hard -> 14n - 4^n = 10
-*/ 
+  /** If statement for difficulty selector.
+   * These change between 3 difficulties.
+   * Examples are as follows:
+   * Easy -> 3n = 15
+   * Normal -> 4n + 4 = 8
+   * Hard -> 14n - 4^n = 10
+   */
 
-function easyDifficulty(){
+  function easyDifficulty() {
     let num1 = Math.ceil(Math.random() * 5);
     let nOne = document.getElementById("n-1");
-    nOne = Math.ceil(Math.random()*5);
+    nOne = Math.ceil(Math.random() * 5);
     easyEquation(num1, nOne);
     focalPoint();
-}
+  }
 
-function normalDifficulty(){
+  function normalDifficulty() {
     let num1 = Math.ceil(Math.random() * 12);
     let num2 = Math.ceil(Math.random() * 10);
     let nOne = document.getElementsByClassName("n-1");
-    nOne = Math.ceil(Math.random()*12);
+    nOne = Math.ceil(Math.random() * 12);
     normalEquation(num1, num2, nOne);
     focalPoint();
-} /* 
+  } /* 
     Temporarily Comment Out Hard Equation 
 
     else if (difficulty === "hard") {
@@ -105,37 +104,35 @@ function normalDifficulty(){
 }
 */
 
-// Function to create equations for each difficulty
+  // Function to create equations for each difficulty
 
-function easyEquation(num1, nOne) {
-    document.getElementById("num1").textContent = num1+"n";
+  function easyEquation(num1, nOne) {
+    document.getElementById("num1").textContent = num1 + "n";
     document.getElementById("operator1").textContent = "";
     document.getElementById("num2").textContent = "";
     document.getElementById("operator2").textContent = "";
     document.getElementById("n-2").textContent = "";
     document.getElementById("operator3").textContent = "=";
     document.getElementById("sum").textContent = num1 * nOne;
+  }
 
-}
-
-function normalEquation(num1, nOne, num2) {
-    let operatorArray = ['+', '-'];
+  function normalEquation(num1, nOne, num2) {
+    let operatorArray = ["+", "-"];
     let operator = Math.floor(Math.random() * operatorArray.length);
 
-
-    document.getElementById("num1").textContent = num1+"n";
+    document.getElementById("num1").textContent = num1 + "n";
     document.getElementById("operator1").textContent = operatorArray[operator];
     document.getElementById("num2").textContent = num2;
     document.getElementById("operator2").textContent = "";
     document.getElementById("n-2").textContent = "";
     document.getElementById("operator3").textContent = "=";
-    if(operatorArray[operator] === "+") { 
-        document.getElementById("sum").textContent = num1 * nOne + num2;
-    } else {document.getElementById("sum").textContent = num1 * nOne - num2; 
-}
-
-};
-/* Temporarily Comment Out Hard Equation 
+    if (operatorArray[operator] === "+") {
+      document.getElementById("sum").textContent = num1 * nOne + num2;
+    } else {
+      document.getElementById("sum").textContent = num1 * nOne - num2;
+    }
+  }
+  /* Temporarily Comment Out Hard Equation 
 
 
 function hardEquation(num1, num2, nOne) {
@@ -155,58 +152,55 @@ function hardEquation(num1, num2, nOne) {
 }
 */
 
-// Function to calculate the value of 'n'
+  // Function to calculate the value of 'n'
 
-
-
-function reDirect() {
+  function reDirect() {
     if (calculateAnswer()[1] === "easy") {
-        easyDifficulty();
+      easyDifficulty();
     } else {
-        normalDifficulty();
+      normalDifficulty();
     }
-}
+  }
 
-function evaluateAnswer() {
+  function evaluateAnswer() {
     let userGuess = parseInt(document.getElementById("user-number").value);
     let correct = calculateAnswer();
     let userCorrect = userGuess === correct[0];
 
     if (userCorrect) {
-        document.getElementById("answer-indicator").textContent = `
+      document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
-        reDirect();
-        addScore(calculateAnswer[1]);
-    } else { document.getElementById("answer-indicator").textContent = `
+      reDirect();
+      addScore(calculateAnswer[1]);
+    } else {
+      document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
-    reDirect();
+      reDirect();
     }
-}
+  }
 
-function calculateAnswer() {
+  function calculateAnswer() {
     let num1 = parseInt(document.getElementById("num1").textContent);
     let operator1 = document.getElementById("operator1").textContent;
     let num2 = parseInt(document.getElementById("num2").textContent);
     let sum = parseInt(document.getElementById("sum").textContent);
-        if (operator1 === "+") {
-           return [(sum - num2) / num1, "normal"]
-        } else if (operator1 === "-") {
-           return [(sum + num2) / num1, "normal"]
-        } else {
-            return [sum / num1, "easy"]
-        }
+    if (operator1 === "+") {
+      return [(sum - num2) / num1, "normal"];
+    } else if (operator1 === "-") {
+      return [(sum + num2) / num1, "normal"];
+    } else {
+      return [sum / num1, "easy"];
     }
+  }
 
-
-function addScore() {
+  function addScore() {
     let currentScore = parseInt(score.textContent);
     if (calculateAnswer()[1] === "easy") {
-    score.textContent = currentScore + 1;
-} else {score.textContent = currentScore +2;
-}
-}
+      score.textContent = currentScore + 1;
+    } else {
+      score.textContent = currentScore + 2;
+    }
+  }
 
-function endGame() {
-    
-};
+  function endGame() {}
 });
