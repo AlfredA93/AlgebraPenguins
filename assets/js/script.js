@@ -10,7 +10,6 @@ const easyButton = document.getElementById("easy");
 const normalButton = document.getElementById("normal");
 
 const clock = document.getElementById("clock");
-const score = document.getElementById("current-score");
 
 startButton.addEventListener("click", startTimer);
 resetButton.addEventListener("click", resetTimer);
@@ -37,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 */
+let score = document.getElementById("current-score");
 let counter = 60; 
 let interval;
 
@@ -168,12 +168,10 @@ function evaluateAnswer() {
     if (userCorrect) {
         document.getElementById("answer-indicator").textContent = `
         Well Done! (insert tick icon here)`;
-        /*stageOne(difficulty = calculateAnswer()[1]);*/
         reDirect();
         addScore();
     } else { document.getElementById("answer-indicator").textContent = `
     (insert cross icon here). Oh no, it was ${correct[0]}`;
-    /*stageOne(difficulty = calculateAnswer()[1]);*/
     reDirect();
     }
 }
@@ -195,7 +193,7 @@ function calculateAnswer() {
 
 function addScore() {
     let currentScore = parseInt(score.textContent);
-    if (calculateAnswer()[1] === "easy") {
+    if (calculateAnswer[1] === "easy") {
     score = currentScore + 1;
 } else { score = currentScore +2;
 }
