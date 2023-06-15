@@ -7,6 +7,10 @@ body {
     padding: 0 25% 0 25%;
 }
 
+header {
+    text-align: center;
+}
+
 #run-container {
     display:flex;
     justify-content: space-around;
