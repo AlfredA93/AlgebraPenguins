@@ -41,6 +41,11 @@ let score = document.getElementById("current-score");
 let counter = 60; 
 let interval;
 
+function focalPoint() {
+    document.getElementById("user-number").focus();
+    document.getElementById("user-number").value = "";
+}
+
 function timer() {
     clock.innerHTML = `${counter}s`;
     counter--;
@@ -78,6 +83,7 @@ function easyDifficulty(){
     let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random()*5);
     easyEquation(num1, nOne);
+    focalPoint();
 }
 
 function normalDifficulty(){
@@ -86,6 +92,7 @@ function normalDifficulty(){
     let nOne = document.getElementsByClassName("n-1");
     nOne = Math.ceil(Math.random()*12);
     normalEquation(num1, num2, nOne);
+    focalPoint();
 } /* 
     Temporarily Comment Out Hard Equation 
 
