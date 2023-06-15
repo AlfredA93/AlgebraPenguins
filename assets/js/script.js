@@ -13,6 +13,11 @@ const clock = document.getElementById("clock");
 const score = document.getElementById("current-score");
 
 startButton.addEventListener("click", startTimer);
+resetButton.addEventListener("click", resetTimer);
+submitButton.addEventListener("click", evaluateAnswer);
+easyButton.addEventListener("click", stageOne);
+normalButton.addEventListener("click", stageOne);
+
 /*
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
