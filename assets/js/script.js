@@ -22,18 +22,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+let counter = 5; 
+let clock = document.getElementById("clock");
+let interval;
+
+function timer() {
+    clock.innerHTML = `${counter}s`;
+    counter--;
+    if (counter < 0 ) {
+      clearInterval(interval);
+      endGame();
+    }
+  }
+
 function startTimer()  {
-    let counter = 60; 
-    let clock = document.getElementById("clock")
-    let interval = setInterval(() => {
-      clock.innerHTML = `${counter}s`;
-      counter--;
-        
-      if (counter < 0 ) {
-        clearInterval(interval);
-        endGame();
-      }
-    }, 1000);
+    interval = setInterval(timer, 1000);
     document.getElementById("current-score").textContent = "0";
 }
 
