@@ -10,7 +10,7 @@ const easyButton = document.getElementById("easy");
 const normalButton = document.getElementById("normal");
 
 const clock = document.getElementById("clock");
-
+const score = document.getElementById("current-score");
 
 
 
@@ -47,7 +47,7 @@ function timer() {
 function startTimer()  {
     startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
-    document.getElementById("current-score").textContent = "0";
+    score.textContent = "0";
 
 }
 
@@ -56,7 +56,7 @@ function resetTimer() {
     counter = 60;
     clock.innerHTML = ``;
     startButton.removeAttribute("disabled");
-    document.getElementById("current-score").textContent = "0";
+    score.textContent = "0";
 }
 
 /** If statement for difficulty selector.
@@ -179,10 +179,10 @@ function calculateAnswer() {
 
 
 function addScore() {
-    let currentScore = parseInt(document.getElementById("current-score").textContent);
+    let currentScore = parseInt(score.textContent);
     if (calculateAnswer()[1] === "easy") {
-    document.getElementById("current-score").textContent = currentScore + 1;
-} else { document.getElementById("current-score").textContent = currentScore +2;
+    score = currentScore + 1;
+} else { score = currentScore +2;
 }
 }
 
