@@ -3,6 +3,16 @@
 //Wait for the DOM to load fully before the game can start running.
 //Add event listeners for which difficulty is chosen.
 
+const startButton = document.getElementById("start-button");
+const resetButton = document.getElementById("reset-button");
+const submitButton = document.getElementById("submit");
+const easyButton = document.getElementById("easy");
+const normalButton = document.getElementById("normal");
+
+const clock = document.getElementById("clock");
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -23,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let counter = 5; 
-let clock = document.getElementById("clock");
 let interval;
 
 function timer() {
