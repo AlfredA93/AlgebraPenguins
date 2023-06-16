@@ -29,6 +29,7 @@ header {
 #clock {
     width: 75px;
     text-align: center;
+    font-weight: 550;
 }
 .run, .difficulty{
     width: 75px;
@@ -70,5 +71,15 @@ header {
 
 #n-answer {
     font-size: larger;
-    font-weight: 500;
+    font-weight: 550;
+}
+
+.score {
+    display:flex;
+    justify-content: center;
+}
+
+#current-score {
+    padding: 0 2% 0 2%;
+    font-weight: 550;
 }
