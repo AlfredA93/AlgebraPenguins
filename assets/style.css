@@ -59,6 +59,7 @@ header {
 .answer {
     display:flex;
     justify-content: center;
+    padding-bottom: 2.5%;
 }
 
 .answer-pieces {
