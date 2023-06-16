@@ -58,6 +58,10 @@ button {
     font-weight: 600;
 }
 
+button:hover {
+    background-color: rgb(222, 222, 222)
+}
+
 
 /* Equation Styles */
 
