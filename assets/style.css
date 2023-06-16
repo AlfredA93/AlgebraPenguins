@@ -91,6 +91,10 @@ header {
     font-weight: 550;
 }
 
+#answer-indicator {
+    justify-content: flex-end;
+}
+
 /* Media Screen Responsive Design Styles */
 
 @media screen and (max-width:900px) {
