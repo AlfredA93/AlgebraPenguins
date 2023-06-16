@@ -47,15 +47,22 @@ header {
 
 .answer {
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     padding: 0 0 2.5% 0;
 }
 
-#user-answer {
-    width: 25%;
- }
+.answer-pieces {
+    padding: 0 5px 0 5px;
+}
 
+#user-answer {
+    width: 75px;
+ }
 #user-number {
-    width: 100%;
+    width: 90%;
+}
+
+#n-answer {
+    font-size: larger;
+    font-weight: 450;
 }
