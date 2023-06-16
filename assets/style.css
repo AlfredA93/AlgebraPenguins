@@ -39,18 +39,12 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 5% 0 5% 0;
+    padding: 2.5% 0 2.5% 0;
     font-size: 200%;
 }
 
 .equation-pieces {
     padding: 1.5px;
-}
-
-.equation-border {
-    border:2px solid black;
-    border-radius: 5px;
-    padding: 5px;
 }
 
 .answer {
