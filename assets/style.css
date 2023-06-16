@@ -43,9 +43,18 @@ img {
     font-weight: 550;
 }
 .run, .difficulty{
-    width: 75px;
+    min-width: 75px;
     text-align: center;
 }
+
+button {
+    background-color: white;
+    border-radius: 5px;
+    border: solid black 2px;
+    font-size: 125%;
+    font-weight: 600;
+}
+
 
 /* Equation Styles */
 
