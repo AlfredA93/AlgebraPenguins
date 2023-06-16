@@ -119,13 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let userCorrect = userGuess === correct[0];
 
     if (userCorrect) {
-      document.getElementById("answer-indicator").textContent = `
-        Well Done! (insert tick icon here)`;
+      document.getElementById("answer-indicator").innerHTML = `
+      <i class="fa-solid fa-check" style="color: #00d60e;"></i>   Well Done!`;
       reDirect();
       addScore(calculateAnswer[1]);
     } else {
-      document.getElementById("answer-indicator").textContent = `
-    (insert cross icon here). Oh no, it was ${correct[0]}`;
+      document.getElementById("answer-indicator").innerHTML = `
+      <i class="fa-solid fa-xmark" style="color: #db0000;"></i> Oh no, it was ${correct[0]}`;
       reDirect();
     }
   }
