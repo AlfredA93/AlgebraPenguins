@@ -49,6 +49,11 @@ header {
     padding: 1.5px;
 }
 
+.game {
+    background-color: hsla(28, 100%, 48%, 1);
+    border-radius: 5px;;
+}
+
 /* Answer Section */
 
 .answer {
