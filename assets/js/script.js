@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
     score.textContent = "0";
+    
   }
 
   function resetTimer() {
@@ -58,12 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
    * Hard -> 14n - 4^n = 10
    */
 
+  function equationStyles() {
+    let equationBorder = document.querySelector('.equation-border');
+    equationBorder.style.cssText = 'background-color: white; display:flex; justify-content: center; align-items: center; border-radius: 5px; padding: 0 2.5% 0 2.5%; border: solid 2px'
+  }
+
   function easyDifficulty() {
     let num1 = Math.ceil(Math.random() * 5);
     let nOne = document.getElementById("n-1");
     nOne = Math.ceil(Math.random() * 5);
     easyEquation(num1, nOne);
     focalPoint();
+    equationStyles()
   }
 
   function normalDifficulty() {
@@ -73,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nOne = Math.ceil(Math.random() * 12);
     normalEquation(num1, num2, nOne);
     focalPoint();
+    equationStyles();
   }
 
   // Function to create equations for each difficulty
