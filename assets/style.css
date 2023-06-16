@@ -47,24 +47,29 @@ header {
     padding: 1.5px;
 }
 
+/* Answer Section */
+
 .answer {
     display:flex;
     justify-content: center;
-    padding: 0 0 2.5% 0;
+    padding: 0 0 0 0;
 }
 
 .answer-pieces {
     padding: 0 5px 0 5px;
+    height: 30px;
 }
 
 #user-answer {
     width: 75px;
+    height: 30px;
  }
 #user-number {
     width: 90%;
+    height: 82.5%;
 }
 
 #n-answer {
     font-size: larger;
-    font-weight: 450;
+    font-weight: 500;
 }
