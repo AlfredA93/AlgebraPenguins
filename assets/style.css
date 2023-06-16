@@ -47,6 +47,13 @@ p {
     padding: 2.5% 0 2.5% 0;
 }
 
+
+#level {
+    font-weight:550;
+    font-size: larger;
+    padding: 0 2% 0 2%;
+}
+
 #clock {
     width: 75px;
     text-align: center;
