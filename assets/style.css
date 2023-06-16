@@ -22,7 +22,7 @@ header {
 
 #run-container, #level-container {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: 2.5% 0 2.5% 0;
 }
