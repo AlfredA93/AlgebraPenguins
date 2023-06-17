@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function equationStylesReset() {
     let equationBorder = document.querySelector('.equation-border');
     equationBorder.style.cssText = '';
-    document.getElementById("num1").textContent = ""
-    document.getElementById("operator1").textContent = ""
-    document.getElementById("num2").textContent = ""
-    document.getElementById("operator3").textContent = "";
-    document.getElementById("sum").textContent = "";
+    numOne.textContent = ""
+    operatorOne.textContent = ""
+    numTwo.textContent = ""
+    operatorThree.textContent = "";
+    sum.textContent = "";
     disableButtons();
   }
 
@@ -122,25 +122,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to create equations for each difficulty
 
   function easyEquation(num1, nOne) {
-    document.getElementById("num1").textContent = num1 + "n";
-    document.getElementById("operator1").textContent = "";
-    document.getElementById("num2").textContent = "";
-    document.getElementById("operator3").textContent = "=";
-    document.getElementById("sum").textContent = num1 * nOne;
+    numOne.textContent = num1 + "n";
+    operatorOne.textContent = "";
+    numTwo.textContent = "";
+    operatorThree.textContent = "=";
+    sum.textContent = num1 * nOne;
   }
 
   function normalEquation(num1, nOne, num2) {
     let operatorArray = ["+", "-"];
     let operator = Math.floor(Math.random() * operatorArray.length);
 
-    document.getElementById("num1").textContent = num1 + "n";
-    document.getElementById("operator1").textContent = operatorArray[operator];
-    document.getElementById("num2").textContent = num2;
-    document.getElementById("operator3").textContent = "=";
+    numOne.textContent = num1 + "n";
+    operatorOne.textContent = operatorArray[operator];
+    numTwo.textContent = num2;
+    operatorThree.textContent = "=";
     if (operatorArray[operator] === "+") {
-      document.getElementById("sum").textContent = num1 * nOne + num2;
+      sum.textContent = num1 * nOne + num2;
     } else {
-      document.getElementById("sum").textContent = num1 * nOne - num2;
+      sum.textContent = num1 * nOne - num2;
     }
   }
 
