@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", evaluateAnswer);
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
+  document.getElementById("user-number").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      evaluateAnswer();
+    }
+ }) 
 
   let counter = 60;
   let interval;
