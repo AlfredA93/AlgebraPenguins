@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.setAttribute("disabled", true);
     startButton.setAttribute("disabled", true);
     if (score.textContent == "0") {
-      alert(`Oh no, you scored ${score.textContent}. Have another go by clicking the reset button You can do it! I believe in you`)
+      alert(`Oh no, you scored ${score.textContent}. Have another go by clicking the reset button. You can do it! Us penguins believe in you!`)
     } else alert(`Well done! You scored ${score.textContent}! Can you or your friends beat this? Have another go by clicking the reset button`)
   }
 });
