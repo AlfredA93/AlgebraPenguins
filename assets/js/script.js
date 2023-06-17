@@ -12,19 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const clock = document.getElementById("clock");
 
+  const numOneText = document.getElementById("num1")
+  const operatorOneText = document.getElementById("operator1")
+  const numTwoText = document.getElementById("num2")
+  const operatorThreeText = document.getElementById("operator3")
+  const sumText = document.getElementById("sum")
+  const score = document.getElementById("current-score");
+
   startButton.addEventListener("click", startTimer);
   resetButton.addEventListener("click", resetTimer);
   submitButton.addEventListener("click", evaluateAnswer);
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
-  
-  let numOneText = document.getElementById("num1")
-  let operatorOneText = document.getElementById("operator1")
-  let numTwoText = document.getElementById("num2")
-  let operatorThreeText = document.getElementById("operator3")
-  let sumText = document.getElementById("sum")
-
-  let score = document.getElementById("current-score");
 
   let counter = 60;
   let interval;
