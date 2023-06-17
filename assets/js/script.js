@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clock.innerHTML = ``;
     startButton.removeAttribute("disabled");
     score.textContent = "0";
+    equationStylesReset();
   }
 
   /** If statement for difficulty selector.
@@ -79,6 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function equationStyles() {
     let equationBorder = document.querySelector('.equation-border');
     equationBorder.style.cssText = 'background-color: white; display:flex; justify-content: center; align-items: center; border-radius: 5px; padding: 0 2.5% 0 2.5%; border: solid 2px'
+  }
+
+  function equationStylesReset() {
+    let equationBorder = document.querySelector('.equation-border');
+    equationBorder.style.cssText = '';
+    document.getElementById("num1").textContent = ""
+    document.getElementById("operator1").textContent = ""
+    document.getElementById("num2").textContent = ""
+    document.getElementById("operator3").textContent = "";
+    document.getElementById("sum").textContent = "";
   }
 
   function easyDifficulty() {
