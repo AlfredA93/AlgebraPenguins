@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const operatorThreeText = document.getElementById("operator3")
   const sumText = document.getElementById("sum")
   const score = document.getElementById("current-score");
+  const userNumber = document.getElementById("user-number");
 
   startButton.addEventListener("click", startTimer);
   resetButton.addEventListener("click", resetTimer);
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     easyButton.setAttribute("disabled", true);
     normalButton.setAttribute("disabled", true);
     submitButton.setAttribute("disabled", true);
+    userNumber.setAttribute("disabled", true);
   }
 
   function enableButtons() {
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     easyButton.removeAttribute("disabled");
     normalButton.removeAttribute("disabled");
     submitButton.removeAttribute("disabled");
+    userNumber.removeAttribute("disabled");
   }
 
   disableButtons();
