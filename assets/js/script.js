@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("user-number").value = "";
   }
 
+  function disableButtons() {
+    resetButton.setAttribute("disabled", true);
+    easyButton.setAttribute("disabled", true);
+    normalButton.setAttribute("disabled", true);
+    submitButton.setAttribute("disabled", true);
+  }
+
+  disableButtons();
+
   function timer() {
     clock.innerHTML = `${counter}s`;
     counter--;
