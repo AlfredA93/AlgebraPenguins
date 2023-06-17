@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
   
-  let numOne = document.getElementById("num1")
-  let operatorOne = document.getElementById("operator1")
-  let numTwo = document.getElementById("num2")
-  let operatorThree = document.getElementById("operator3")
-  let sum = document.getElementById("sum")
+  let numOneText = document.getElementById("num1")
+  let operatorOneText = document.getElementById("operator1")
+  let numTwoText = document.getElementById("num2")
+  let operatorThreeText = document.getElementById("operator3")
+  let sumText = document.getElementById("sum")
 
   let score = document.getElementById("current-score");
 
@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function equationStylesReset() {
     let equationBorder = document.querySelector('.equation-border');
     equationBorder.style.cssText = '';
-    numOne.textContent = ""
-    operatorOne.textContent = ""
-    numTwo.textContent = ""
-    operatorThree.textContent = "";
-    sum.textContent = "";
+    numOneText.textContent = ""
+    operatorOneText.textContent = ""
+    numTwoText.textContent = ""
+    operatorThreeText.textContent = "";
+    sumText.textContent = "";
     disableButtons();
   }
 
@@ -122,25 +122,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to create equations for each difficulty
 
   function easyEquation(num1, nOne) {
-    numOne.textContent = num1 + "n";
-    operatorOne.textContent = "";
-    numTwo.textContent = "";
-    operatorThree.textContent = "=";
-    sum.textContent = num1 * nOne;
+    numOneText.textContent = num1 + "n";
+    operatorOneText.textContent = "";
+    numTwoText.textContent = "";
+    operatorThreeText.textContent = "=";
+    sumText.textContent = num1 * nOne;
   }
 
   function normalEquation(num1, nOne, num2) {
     let operatorArray = ["+", "-"];
     let operator = Math.floor(Math.random() * operatorArray.length);
 
-    numOne.textContent = num1 + "n";
-    operatorOne.textContent = operatorArray[operator];
-    numTwo.textContent = num2;
-    operatorThree.textContent = "=";
+    numOneText.textContent = num1 + "n";
+    operatorOneText.textContent = operatorArray[operator];
+    numTwoText.textContent = num2;
+    operatorThreeText.textContent = "=";
     if (operatorArray[operator] === "+") {
-      sum.textContent = num1 * nOne + num2;
+      sumText.textContent = num1 * nOne + num2;
     } else {
-      sum.textContent = num1 * nOne - num2;
+      sumText.textContent = num1 * nOne - num2;
     }
   }
 
