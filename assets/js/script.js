@@ -17,8 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", evaluateAnswer);
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
+  
+  let numOne = document.getElementById("num1")
+  let operatorOne = document.getElementById("operator1")
+  let numTwo = document.getElementById("num2")
+  let operatorThree = document.getElementById("operator3")
+  let sum = document.getElementById("sum")
 
   let score = document.getElementById("current-score");
+
   let counter = 60;
   let interval;
 
