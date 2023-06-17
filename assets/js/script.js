@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("num2").textContent = ""
     document.getElementById("operator3").textContent = "";
     document.getElementById("sum").textContent = "";
+    disableButtons();
   }
 
   function easyDifficulty() {
