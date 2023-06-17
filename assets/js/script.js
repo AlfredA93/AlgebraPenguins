@@ -174,10 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function calculateAnswer() {
-    let num1 = parseInt(document.getElementById("num1").textContent);
-    let operator1 = document.getElementById("operator1").textContent;
-    let num2 = parseInt(document.getElementById("num2").textContent);
-    let sum = parseInt(document.getElementById("sum").textContent);
+    let num1 = parseInt(numOneText.textContent);
+    let operator1 = operatorOneText.textContent;
+    let num2 = parseInt(numTwoText.textContent);
+    let sum = parseInt(sumText.textContent);
     if (operator1 === "+") {
       return [(sum - num2) / num1, "normal"];
     } else if (operator1 === "-") {
