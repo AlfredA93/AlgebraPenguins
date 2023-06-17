@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     interval = setInterval(timer, 1000);
     score.textContent = "0";
     enableButtons();
+    setTimeout(normalDifficulty, 1000);
   }
 
   function resetTimer() {
