@@ -197,5 +197,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function endGame() {}
+  function endGame() {
+    easyButton.setAttribute("disabled", true);
+    normalButton.setAttribute("disabled", true);
+    submitButton.setAttribute("disabled", true);
+    startButton.setAttribute("disabled", true);
+    if (score.textContent == "0") {
+      alert(`Oh no, you scored ${score.textContent}. Have another go by clicking the reset button You can do it! I believe in you`)
+    } else alert(`Well done! You scored ${score.textContent}! Can you or your friends beat this? Have another go by clicking the reset button`)
+  }
 });
