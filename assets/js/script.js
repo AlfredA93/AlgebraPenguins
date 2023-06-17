@@ -25,10 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
   document.getElementById("user-number").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      evaluateAnswer();
+    if (event.key === "Enter") { if (counter > 0) {
+        evaluateAnswer();
+      } else {
+        alert(`Please reset game to continue playing`)
+      }
     }
- }) 
+    })  
 
   let counter = 60;
   let interval;
