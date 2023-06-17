@@ -34,6 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.setAttribute("disabled", true);
   }
 
+  function enableButtons() {
+    resetButton.removeAttribute("disabled");
+    easyButton.removeAttribute("disabled");
+    normalButton.removeAttribute("disabled");
+    submitButton.removeAttribute("disabled");
+  }
+
   disableButtons();
 
   function timer() {
@@ -49,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
     score.textContent = "0";
-    
+    enableButtons();
   }
 
   function resetTimer() {
