@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", evaluateAnswer);
   easyButton.addEventListener("click", easyDifficulty);
   normalButton.addEventListener("click", normalDifficulty);
-  document.getElementById("user-number").addEventListener("keydown", function(event) {
+  userNumber.addEventListener("keydown", function(event) {
     if (event.key === "Enter") { 
       if (counter > 0) {
         evaluateAnswer();
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function evaluateAnswer() {
-    let userGuess = parseInt(document.getElementById("user-number").value);
+    let userGuess = parseInt(userNumber.value);
     let correct = calculateAnswer();
     let userCorrect = userGuess === correct[0];
 
