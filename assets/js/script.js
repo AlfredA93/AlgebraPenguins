@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Add JavaScript here
+/*When DOM has loaded, load all javascript functions */
 
-  //Wait for the DOM to load fully before the game can start running.
-  //Add event listeners for which difficulty is chosen.
+document.addEventListener("DOMContentLoaded", function () {
+
+/* Button constants */
 
   const startButton = document.getElementById("start-button");
   const resetButton = document.getElementById("reset-button");
@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const easyButton = document.getElementById("easy");
   const normalButton = document.getElementById("normal");
 
+/* Clock constant for start/reset timer functions */
+
   const clock = document.getElementById("clock");
+
+/* Equation variables - for each part of the game's features*/
 
   const numOneText = document.getElementById("num1")
   const operatorOneText = document.getElementById("operator1")
@@ -19,6 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const sumText = document.getElementById("sum")
   const score = document.getElementById("current-score");
   const userNumber = document.getElementById("user-number");
+
+  /**
+   * Event Listeners to hear for clicks and keypress Enter
+   * Chooses difficulty, starts or resets timer
+  */
 
   startButton.addEventListener("click", startTimer);
   resetButton.addEventListener("click", resetTimer);
@@ -35,13 +44,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     })  
 
+/* Variables counter and interval are global, so they can be used by the timer function */
+
   let counter = 60;
   let interval;
+
+  /* Focal point function puts the focus of the page on the user input */ 
 
   function focalPoint() {
     document.getElementById("user-number").focus();
     document.getElementById("user-number").value = "";
   }
+
+  /**
+   * disableButtons function disables all buttons apart from start button
+   * enable Buttons removes the disabled attribute from the buttons, so these can be accessed  */ 
 
   function disableButtons() {
     resetButton.setAttribute("disabled", true);
@@ -59,7 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
     userNumber.removeAttribute("disabled");
   }
 
+  /** This disables all buttons apart from the Start button when the page loads */ 
+
   disableButtons();
+
+  /**
+   * Timer function runs a timer from 60s to 0 and then triggers
+   * endGame function when timer reaches 0 
+   */ 
 
   function timer() {
     clock.innerHTML = `${counter}s`;
@@ -70,6 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+   /**
+   * startTimer triggers the timer to start and enables the difficulty and submit buttons
+   * It also used setTimeout() function so that both the equation and the timer 
+   * show on screen at the same time.
+   */ 
+
   function startTimer() {
     startButton.setAttribute("disabled", true);
     interval = setInterval(timer, 1000);
@@ -77,6 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     enableButtons();
     setTimeout(normalDifficulty, 1000);
   }
+
+  /**
+   * resetTimer resets the timer and score and triggers reset equation styles function, so the page returns
+   * back to the state of initial page load.
+   */ 
 
   function resetTimer() {
     clearInterval(interval);
@@ -87,18 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
     equationStylesReset();
   }
 
-  /** If statement for difficulty selector.
-   * These change between 3 difficulties.
-   * Examples are as follows:
-   * Easy -> 3n = 15
-   * Normal -> 4n + 4 = 8
-   * Hard -> 14n - 4^n = 10
-   */
+  /**
+   * equationStyles function gives the equation styles, 
+   * so that they appear in a box with similar styles to the buttons
+   */ 
 
   function equationStyles() {
     let equationBorder = document.querySelector('.equation-border');
     equationBorder.style.cssText = 'background-color: white; display:flex; justify-content: center; align-items: center; border-radius: 5px; padding: 0 2.5% 0 2.5%; border: solid 2px'
   }
+
+  /**
+   * equationStylesReset function clears all equation styles, so the page returns
+   * back to the state of initial page load. 
+   */ 
 
   function equationStylesReset() {
     let equationBorder = document.querySelector('.equation-border');
@@ -110,6 +147,13 @@ document.addEventListener("DOMContentLoaded", function () {
     sumText.textContent = "";
     disableButtons();
   }
+
+  /** 
+   * Difficulty Selector functions.
+   * Examples are as follows:
+   * Easy -> 3n = 15
+   * Normal -> 4n + 4 = 8
+   */
 
   function easyDifficulty() {
     let num1 = Math.ceil(Math.random() * 5);
@@ -130,7 +174,11 @@ document.addEventListener("DOMContentLoaded", function () {
     equationStyles();
   }
 
-  // Function to create equations for each difficulty
+  /**
+   * easyEquation and normalEquation functions display the equation.
+   * These functions use the random numbers generated in the difficulty 
+   * functions and set's their position in the html.
+   */ 
 
   function easyEquation(num1, nOne) {
     numOneText.textContent = num1 + "n";
@@ -155,7 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to calculate the value of 'n'
+  /**
+   * reDirect Function launches the next equation to run depending on current difficulty level.
+   * This function also clears the text of the answer indicator section. 
+   * The answer indicator shows whether their previous guess was correct or not.
+   */  
 
   function reDirect() {
     if (calculateAnswer()[1] === "easy") {
@@ -167,6 +219,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("answer-indicator").textContent = "";
     }, 2000);
   }
+
+  /**
+   * evaluateAnswer function checks the user answer with the calculated answer.
+   * If user is correct, it triggers the score function to add points to the score.
+   */
 
   function evaluateAnswer() {
     let userGuess = parseInt(userNumber.value);
@@ -185,6 +242,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /**
+   * calculateAnswer function generates the correct answer from the html on the page
+   * It converts the string into numbers and runs the equation to calculate the value of 'n'
+   * It creates an array which then can be accessed by both reDirect function and addScore function.
+   */
+
   function calculateAnswer() {
     let num1 = parseInt(numOneText.textContent);
     let operator1 = operatorOneText.textContent;
@@ -199,6 +262,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /* addScore function adds points to the score depending on the difficulty level */ 
+
   function addScore() {
     let currentScore = parseInt(score.textContent);
     if (calculateAnswer()[1] === "easy") {
@@ -207,6 +272,13 @@ document.addEventListener("DOMContentLoaded", function () {
       score.textContent = currentScore + 2;
     }
   }
+
+  /**
+   * endGame function triggers when the timer reaches 0
+   * It disables all buttons apart from reset.
+   * It triggers an alert to tell the user their score and gives 
+   * them an appropriate message depending on their score.  
+   */ 
 
   function endGame() {
     easyButton.setAttribute("disabled", true);
