@@ -235,6 +235,9 @@ All Media was created and owned by the website author - Alfred Ayre.
 - Image Converters
     - [EZ Gif](https://ezgif.com/jpg-to-webp/)
     - [Tiny Img](https://tiny-img.com/webp/)
+- [Font Awesome](https://fontawesome.com/) for icons
+- [Google Fonts](https://fonts.google.com/) for fonts
+- [Adobe Fresco](https://www.adobe.com/products/fresco.html) for image creation
 
 ## Wireframes
 ------
