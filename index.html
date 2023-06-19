@@ -1,75 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Algebra Maths game to help math's students practice algebra skills">
-    <meta name="author" content="Alfred Ayre">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Algebra Maths game to help math's students practice algebra skills"
+    />
+    <meta name="author" content="Alfred Ayre" />
     <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/7a833399cb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/style.css">
+    <script
+      src="https://kit.fontawesome.com/7a833399cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Algebra Penguins</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1> Algebra Penguins</h1>
+      <h1>Algebra Penguins</h1>
     </header>
     <div id="main-image">
-        <img src="assets/images/penguin-2.webp" alt="Algebra Penguin with speech bubble saying 'Algebra is easy, Let's play a game!'">
+      <img
+        src="assets/images/penguin-2.webp"
+        alt="Algebra Penguin with speech bubble saying 'Algebra is easy, Let's play a game!'"
+      />
     </div>
     <main class="game">
-        <section class="rules">
-            <div class="rules-container">
-            <h3>Guidelines</h3>
-            <p>
-                You have 60 seconds to complete as many equations as you can. There are two difficulty levels, Easy and Normal. 
-                You get 1 point for correctly answering an Easy equation and 2 points for a Normal equation. The default difficulty 
-                is Normal. You can change between the difficulty levels during the 60 seconds, just click on the corresponding button 
-                and it will display that difficulty repeatedly until changed.
-            </p>
-            </div>
-        </section>
-        <section id="run-container">
-            <span>
-               <button class="run" id="start-button" aria-label="Beings game and starts timer">Start</button>
-            </span>
-            <span class="run" id="clock"></span>
-            <span>
-                <button class="run" id="reset-button" aria-label="Set timer to zero">Reset</button>
-            </span>
-        </section>
-        <section id="level-container">
-            <span class="difficulty" id="level">Difficulty : </span>
-            <span>
-                <button class="difficulty" id="easy" aria-label="Easy Difficulty Level">Easy</button>
-            </span>
-            <span>
-                <button class="difficulty" id="normal" aria-label="Normal Difficulty Level">Normal</button>
-            </span>
-        </section>
-        <section class="equation">
-            <div class="equation-border">
-                <span class="equation-pieces" id="num1"></span>
-                <span class="equation-pieces" id="n-1"></span>
-                <span class="equation-pieces" id="operator1"></span>
-                <span class="equation-pieces" id="num2"></span>
-                <span class="equation-pieces"></span>
-                <span class="equation-pieces" id="operator3"></span>
-                <span class="equation-pieces"></span>
-                <span class="equation-pieces" id="sum"></span>
-            </div>
-        </section>
-        <section class="answer">
-            <span class="answer-pieces" id="n-answer">n =</span>
-            <span class="answer-pieces" id="user-answer"><input type="number" id="user-number"></span>
-            <button class="answer-pieces" id="submit" aria-label="Check user answer">Submit</button>
-        </section>
+      <section class="rules">
+        <div class="rules-container">
+          <h3>Guidelines</h3>
+          <p>
+            You have 60 seconds to complete as many equations as you can. There
+            are two difficulty levels, Easy and Normal. You get 1 point for
+            correctly answering an Easy equation and 2 points for a Normal
+            equation. The default difficulty is Normal. You can change between
+            the difficulty levels during the 60 seconds, just click on the
+            corresponding button and it will display that difficulty repeatedly
+            until changed.
+          </p>
+        </div>
+      </section>
+      <section id="run-container">
+        <span>
+          <button
+            class="run"
+            id="start-button"
+            aria-label="Beings game and starts timer"
+          >
+            Start
+          </button>
+        </span>
+        <span class="run" id="clock"></span>
+        <span>
+          <button class="run" id="reset-button" aria-label="Set timer to zero">
+            Reset
+          </button>
+        </span>
+      </section>
+      <section id="level-container">
+        <span class="difficulty" id="level">Difficulty : </span>
+        <span>
+          <button
+            class="difficulty"
+            id="easy"
+            aria-label="Easy Difficulty Level"
+          >
+            Easy
+          </button>
+        </span>
+        <span>
+          <button
+            class="difficulty"
+            id="normal"
+            aria-label="Normal Difficulty Level"
+          >
+            Normal
+          </button>
+        </span>
+      </section>
+      <section class="equation">
+        <div class="equation-border">
+          <span class="equation-pieces" id="num1"></span>
+          <span class="equation-pieces" id="n-1"></span>
+          <span class="equation-pieces" id="operator1"></span>
+          <span class="equation-pieces" id="num2"></span>
+          <span class="equation-pieces"></span>
+          <span class="equation-pieces" id="operator3"></span>
+          <span class="equation-pieces"></span>
+          <span class="equation-pieces" id="sum"></span>
+        </div>
+      </section>
+      <section class="answer">
+        <span class="answer-pieces" id="n-answer">n =</span>
+        <span class="answer-pieces" id="user-answer"
+          ><input type="number" id="user-number"
+        /></span>
+        <button
+          class="answer-pieces"
+          id="submit"
+          aria-label="Check user answer"
+        >
+          Submit
+        </button>
+      </section>
     </main>
     <footer class="score">
-        <span>Score =</span>
-        <span id="current-score">0</span>
-        <span id="answer-indicator"></span>
+      <span>Score =</span>
+      <span id="current-score">0</span>
+      <span id="answer-indicator"></span>
     </footer>
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
