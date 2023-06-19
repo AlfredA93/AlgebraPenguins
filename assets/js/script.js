@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */ 
 /*When DOM has loaded, load all javascript functions */
 
 document.addEventListener("DOMContentLoaded", function () {
