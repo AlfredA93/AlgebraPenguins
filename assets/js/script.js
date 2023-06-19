@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const numOneText = document.getElementById("num1");
   const operatorOneText = document.getElementById("operator1");
   const numTwoText = document.getElementById("num2");
-  const operatorThreeText = document.getElementById("operator3");
+  const operatorTwoText = document.getElementById("operator2");
   const sumText = document.getElementById("sum");
   const score = document.getElementById("current-score");
   const userNumber = document.getElementById("user-number");
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     numOneText.textContent = "";
     operatorOneText.textContent = "";
     numTwoText.textContent = "";
-    operatorThreeText.textContent = "";
+    operatorTwoText.textContent = "";
     sumText.textContent = "";
     disableButtons();
   }
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     numOneText.textContent = num1 + "n";
     operatorOneText.textContent = "";
     numTwoText.textContent = "";
-    operatorThreeText.textContent = "=";
+    operatorTwoText.textContent = "=";
     sumText.textContent = num1 * nOne;
   }
 
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     numOneText.textContent = num1 + "n";
     operatorOneText.textContent = operatorArray[operator];
     numTwoText.textContent = num2;
-    operatorThreeText.textContent = "=";
+    operatorTwoText.textContent = "=";
     if (operatorArray[operator] === "+") {
       sumText.textContent = num1 * nOne + num2;
     } else {
