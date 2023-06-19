@@ -55,13 +55,13 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
     ![easy equation 2](assets/documentation-webp/easy-equation.webp)
 
-- User input section
+- User Input Section
     - This is where the user can input a number of their choosing to guess the value of 'n' and then submit that answer for evaluation.
     - The answer will also be evaluated if the user presses the enter key instead of clicking the submit button.
 
     ![user submit](assets/documentation-webp/input.webp)
 
-- The score section
+- The Score Section
     - The score will tally up the score of the player as they answer each correct answer.
     - This section shows the current score that the user has. The game gives 2 points for every normal difficulty equation answered correctly and 1 point for every easy difficulty equation answered correctly. 
 
@@ -87,14 +87,25 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
     - If the user presses the enter key after the game timer has ran out, then the following alert will show.
 
-    ![alert end game - key enter](/assets/documentation-webp/endgame-enter.webp)
+    ![alert end game - key enter](/assets/documentation-webp/attempt-zero-timer.webp)
 
 ### **Potential Future Features**
-- 
+- Create a scoreboard so that users can store their scores on an external database and compete with one another.
+- Add a hard difficulty with more operators and more complex equations
 
 ## Design
 ------
 
+- The Design for this website was inspired by my high school education. During my highschool maths lessons, classmates who didn’t like algebra decided that they would call it penguins instead, to make it more likeable and approachable.
+- This inspired me to draw a penguin image from on my iPad using Adobe Fresco. 
+- The font chosen are two that felt both comfy and fun, yet also clear and simple to read, to keep it accessible.
+    - The fonts chosen were Gill Sans from Adobe Fresco and Kanit from Google Fonts. 
+    - The Colours throughout the website were chosen from the main image and designed to be basic and simple
+        - Orange from the beak
+        - White from the face and tummy
+        - Grey/Orange for the scoreboard that was based on the beak colour but in a grey shade.
+
+    ![main image](assets/documentation-webp/design.webp)
 
 ## Testing
 ------
@@ -104,20 +115,35 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
     - Brave
 ### **Validator Testing**
 - **HTML**
-    - [W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) 
+    - No errors were found when checking the website with [W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) 
 
-     ![HTML Valid]()
+     ![HTML Valid](/assets/documentation-webp/validations/html-valid.webp)
      
 
 - **CSS**
-    - [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/) 
+    - No errors were found when checking the website with [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/) 
 
-    ![CSS Valid]()
+    ![CSS Valid](/assets/documentation-webp/validations/css-valid.webp)
+
+- **JS Hint**
+    - No errors were found when checking the JavaScript code using the [JS Hint](https://jshint.com/)
+        - The metrics were as follows 
+            - There are 20 functions in this file.
+            - Function with the largest signature take 3 arguments, while the median is 0.
+            - Largest function has 39 statements in it, while the median is 5.
+            - The most complex function has a cyclomatic complexity value of 3 while the median is 1.
+    - When testing my JavaScript with JS Hint, there were originally warnings associated with it, however these disappeared when I added a section of code /*jshint esversion: 6 */  at the top of the document. This was recommended by my Mentor whom confirmed that there wasn't any errors in the code. See screenshots below for clarification.
+    - JS Hint with warnings
+    ![JS Hint warnings](/assets/documentation-webp/validations/jshint-warnings.webp)
+    - JS Hint valid
+
+    ![JS Hint valid](/assets/documentation-webp/validations/jshint-valid.webp)
 
 - **Lighthouse**
-    - 
+    - Testing the website with Lighthouse I received a Green Pass on all available classes.
 
-    ![Lighthouse report]()
+    ![Lighthouse report desktop](/assets/documentation-webp/validations/lighthouse-desktop.webp)
+    ![Lighthouse report mobile](/assets/documentation-webp/validations/lighthouse-mobile.webp)
 
 ### **Responsiveness**
 - 
@@ -125,6 +151,66 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 - 
 
 ### **Bugs**
+
+Problem 1 - Added complexity to the difficulty selector functions and the create equation functions. It broke the script and didn’t function as intended.
+
+Fix 1 - getElementById was missing the document.getElementById part of code.
+
+Problem 2 - If you go from hard difficulty to easy difficulty, the numbers filling spans for hard would stay in place and not clear.
+
+Fix 2 - 
+
+
+Problem 3 - Second ‘n’ notation on had equation not showing.
+
+Fix - Add an id element on span.
+
+Problem 4 - Hard equation doesn’t seem to calculate correctly. Suspecting that when the function is run, it runs random number again instead of taking text content of current fields.
+
+Fix 4 - Temporarily remove Hard Equation - 
+
+
+
+
+
+
+
+Problem 5 - Equation calculator and user answer functions not working as intended. 
+
+
+
+6. The value coming out of the calculateAnswer function was NaN
+6 Fix. change .value on the code to .textContent to then Parse into Integer.
+7. 
+
+
+
+
+
+
+
+7 fix. Calculate code was written the wrong way around
+
+
+
+8. Timer not appearing into set span
+https://careerkarma.com/blog/javascript-cannot-set-property-innerhtml-of-null/
+
+9. Timer can have two timers running at once if you click twice on start timer.
+9 fix - Add a set attribute = disabled to the code.
+
+10. If you click submit 
+
+11. After adding score to a global scope variable, the core isn’t appearing in the html.
+11 fix - Add .textContent to the .js code 
+
+12. After adding event listener keydown === enter. You can continue playing the game even after the timer has ran out.
+
+12 fix - Add if statement to the event listener based on timer count.
+
+- Problem 13: You can trigger equations to start appearing by pressing enter on the input even through submit button is disabled.
+    - *Solution 13: Disable user input until start button is activated.*
+
 
 - Problem: 
     - *Solution: *
@@ -169,3 +255,4 @@ Algebra Penguins was deployed onto GitHub Pages. Here are the steps to deploy th
 
 ## Wireframes
 ------
+![wireframe](assets/documentation-webp/wireframe-1.webp)
