@@ -210,9 +210,9 @@ Algebra Penguins was deployed onto GitHub Pages. Here are the steps to deploy th
 
 - My Mentor Alex helped explained the syntax of the timer function to me which I applied a simple version of in my code.
 
-![timer credit](assets/documentation-webp/timer-credit.webp)
+    ![timer credit](assets/documentation-webp/timer-credit.webp)
 
-- [freeCodeCamp](https://www.freecodecamp.org/news/how-to-create-a-countdown-timer/) also assisted in how to create a timer.
+    - [freeCodeCamp](https://www.freecodecamp.org/news/how-to-create-a-countdown-timer/) also assisted in how to create a timer.
 
 ### **Helpsheets and Learning Resources**
 
