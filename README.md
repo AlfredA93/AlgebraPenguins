@@ -187,7 +187,10 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 ------
 
 I used capitals in the repository name of the gitHub and thus this meant after deployment, there were capitals in my URL.
-    - *Solution: I renamed my repository post deployment*
+    
+- *Solution: I renamed my repository post deployment*
+
+![repository name mistake](/assets/documentation-webp/mistake.webp)
 
 ## Deployment
 ------
