@@ -20,7 +20,7 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
 - The Game Section
     - This is where the game will be played. It included multiple buttons, to start the game, reset the game, choose difficulty (easy or normal) and submit their answer.
-    - Before the game starts, the only button which is enabled and clickable is the start button. This encourages the user to click the start button to engage with the game content.
+    - Before the game starts, the only button which is enabled and clickable is the start button. This encourages the user to click the start button and engage with the game content.
 
     ![game start](assets/documentation-webp/start-game.webp)
 
@@ -51,13 +51,14 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
     ![normal equation 2](assets/documentation-webp/normal-equation.webp)
 
-    - The user can then choose whether they want to work out normal equations or easy by clicking the associated easy or normal buttons. Once clicked, this equation will repeat unless otherwise specified (by clicking the opposite button). This how the easy equation looks in full view of the game section.
+    - The user can then choose whether they want to work out normal equations or easy equations by clicking the associated easy or normal buttons. Once clicked, this equation will repeat unless otherwise specified (by clicking the opposite button). This how the easy equation looks in full view of the game section.
 
     ![easy equation 2](assets/documentation-webp/easy-equation.webp)
 
 - User Input Section
     - This is where the user can input a number of their choosing to guess the value of 'n' and then submit that answer for evaluation.
     - The answer will also be evaluated if the user presses the enter key instead of clicking the submit button.
+    - The user input is disabled until the start button is clicked.
 
     ![user submit](assets/documentation-webp/input.webp)
 
@@ -75,8 +76,7 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
     ![guess incorrect](assets/documentation-webp/guess-incorrect.webp)
 
 - Alerts
-    - This game utilises alerts to interact encouragingly and informatively with the user.
-    - There are a few different instances when the alerts are triggered.
+This game utilises alerts to interact encouragingly and informatively with the user. There are a few different instances when the alerts are triggered.
     - When the user has finished the game an alert will be triggered notifying the user of their score.
 
     ![alert score positive](assets/documentation-webp/score-positive.webp)
@@ -85,7 +85,7 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
     ![alert score zero](assets/documentation-webp/score-zero.webp)
 
-    - If the user presses the enter key after the game timer has ran out, then the following alert will show.
+    - If the user presses the enter key (to trigger the game to check their answer) after the game timer has ran out, then the following alert will show.
 
     ![alert end game - key enter](assets/documentation-webp/attempt-zero-timer.webp)
 
@@ -96,7 +96,7 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 ## Design
 ------
 
-- The Design for this website was inspired by my high school education. During my highschool maths lessons, classmates who didn’t like algebra decided that they would call it penguins instead, to make it more likeable and approachable.
+- The Design for this website was inspired by my time at high school. During my maths lessons, classmates who didn’t like algebra decided that they would call it *penguins* instead, to make it more likeable and approachable.
 - This inspired me to draw a penguin image using Adobe Fresco. 
 - The font chosen are two that felt both comfy and fun, yet also clear and simple to read, to keep it accessible.
     - The fonts chosen were Gill Sans from Adobe Fresco and Kanit from Google Fonts. 
@@ -167,16 +167,15 @@ Algebra Penguins is a website game for people to practice algebra. It is aimed a
 
 - Problem 3: The value coming out of the calculateAnswer function was NaN
     - *Solution 3: Change `.value` on the code to `.textContent` to then Parse into Integer using `parseInt()` function.*
-    ![bug NaN](assets/documentation-webp/bugs/bug-nan.webp)
 
 - Problem 4: Calculation in the function `calculateAnswer()` isn't correct.
     - *Solution 4: Sum within CalculateAnswer function() was written the wrong way around*
     ![bug 5](/assets/documentation-webp/bugs/bug-7.webp)
 
 - Problem 5: Timer can have two timers running at once if you click twice on start timer.
-    - *Solution 5:  Add a `setAttribute = "disabled"` to the code.
+    - *Solution 5:  Add a `setAttribute = "disabled"` to the code applying to the start button.
 
-- Problem 6: You can trigger equations to start appearing by pressing enter on the input even through submit button is disabled.
+- Problem 6: You can trigger equations to start appearing before pressing the start button by pressing enter on the input even through submit button is disabled.
     - *Solution 6: Disable user input until start button is activated.*
     ![bug fix 12](assets/documentation-webp/bugs/bug-12.webp)
 #### **Unfixed Bugs**
